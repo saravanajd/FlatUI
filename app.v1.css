@@ -1669,7 +1669,6 @@ header {
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap;
-    line-height: calc(100% - 3.5rem);
 }
 
 header .logo {
@@ -1685,8 +1684,9 @@ header .logo {
     width: calc(100% - 220px);
     display: flex;
     flex-wrap: nowrap;
-    font-size: 1.2rem;
-    color: #777;
+    font-size: 1.3rem;
+    font-weight: 500px;
+    color: #333;
     line-height:inherit;
 }
 
@@ -1694,7 +1694,6 @@ header .logo {
 .left {
     flex: 0 0 50%;
     max-width: 50%;
-    display: table;
     height: 100%;
 }
 
@@ -1703,17 +1702,21 @@ header .logo {
 }
 .right span, .right a,
 .left span, .left a{
-    display: table-cell;
+    display: inline-block;
     vertical-align: middle;
+    line-height: 3.0rem;
+    height: 100%;
+    min-width: 50px;
 }
 .topbar-btn{
     height: 100%;
     text-align: center;
     color: inherit;
     font-size: inherit;
+    padding: 0 1rem;
+
 }
 .navbar-collopse{
-    height: 100%;
     width: 50px;
     text-align: center;
     color: inherit;
