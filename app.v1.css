@@ -1669,6 +1669,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap;
+    line-height: calc(100% - 3.5rem);
 }
 
 header .logo {
@@ -1678,23 +1679,45 @@ header .logo {
 }
 
 .topbar {
-    padding-top: 0.7rem;
     position: relative;
     height: 100%;
     width: 100%;
     width: calc(100% - 220px);
     display: flex;
     flex-wrap: nowrap;
+    font-size: 1.2rem;
+    color: #777;
+    line-height:inherit;
 }
 
 .right,
 .left {
     flex: 0 0 50%;
     max-width: 50%;
+    display: table;
+    height: 100%;
 }
 
 .right {
     text-align: right;
+}
+.right span, .right a,
+.left span, .left a{
+    display: table-cell;
+    vertical-align: middle;
+}
+.topbar-btn{
+    height: 100%;
+    text-align: center;
+    color: inherit;
+    font-size: inherit;
+}
+.navbar-collopse{
+    height: 100%;
+    width: 50px;
+    text-align: center;
+    color: inherit;
+    font-size: inherit;
 }
 
 /* Topbar End */
