@@ -1733,6 +1733,8 @@ aside {
     margin: 0;
     width: 220px;
     border-right: 2px solid #ddd;
+    background-color: #45586E;
+    color: #adbece;
     height: 100%;
     overflow: auto;
 }
@@ -1745,14 +1747,14 @@ nav {
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid #2E3E4E;
 }
 
 .nav li {
     position: relative;
     display: block;
     line-height: 1.5;
-    border-top: 1px solid #ddd;
+    /* border-top: 1px solid #2E3E4E; */
     transition: all 0.3s ease;
 }
 
@@ -1765,6 +1767,7 @@ nav {
     border-color: rgba(255, 255, 255, 0.05);
     transition: color .3s ease-in-out 0s;
     display: block;
+    color: inherit;
 }
 .nav li i{
     transition: all 0.3s ease;
@@ -1785,11 +1788,13 @@ nav {
 .dropdown ul{
     opacity: 0;
     height: 0;
+    background-color: #374B5E;
 }
 
 .dropdown ul > li{
     margin-left: -5rem;
     padding-left: 0.7rem;
+    background-color: inherit;
 }
 .dropdown.active.open ul{
     opacity: 1;
