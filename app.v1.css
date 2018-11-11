@@ -1769,6 +1769,14 @@ nav {
     display: block;
     color: inherit;
 }
+.nav li a:hover{
+    background: #374B5E;
+    color: #e0e0e0;
+}
+.nav li.active > a {
+    background: #3e5468;
+    color: #e0e0e0;
+}
 .nav li i{
     transition: all 0.3s ease;
 }
@@ -1788,13 +1796,12 @@ nav {
 .dropdown ul{
     opacity: 0;
     height: 0;
-    background-color: #374B5E;
 }
 
 .dropdown ul > li{
     margin-left: -5rem;
     padding-left: 0.7rem;
-    background-color: inherit;
+    background-color: #374B5E;
 }
 .dropdown.active.open ul{
     opacity: 1;
