@@ -1655,6 +1655,28 @@ fieldset[disabled] .btn {
 }
 
 /* App End */
+/* ScrollBar Start */
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	background-color: #45586e;
+}
+
+::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #45586e;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #00BCD4;
+}
+
+/* Scrollbar End */
 
 /* Topbar Start */
 
@@ -1741,6 +1763,10 @@ aside {
 
 nav {
     display: block;
+    height: 100%;
+    /* Topbar height(3.5rem) + nav-footer height (3.5rem) = 7rem  */
+    max-height: calc(100% - 7rem);
+    overflow-y: auto;
 }
 
 .nav {
@@ -1794,6 +1820,7 @@ nav {
 }
 
 .dropdown ul{
+    display: none;
     opacity: 0;
     height: 0;
 }
@@ -1804,6 +1831,7 @@ nav {
     background-color: #374B5E;
 }
 .dropdown.active.open ul{
+    display: block;
     opacity: 1;
     height: auto;
 }
@@ -1815,5 +1843,22 @@ nav {
 .dropdown.active.open .arrow i {
     transform: rotate(180deg);
 }
-
+.nav-footer{
+    text-align: center;
+    color: #fafafa;
+    background: #374B5E;
+    padding: 0.5rem 0;
+    position: absolute;
+    left: 0;
+    /* Top-bar Height 3.5rem */
+    bottom: 3.5rem;
+    width: 100%;
+}
+.nav-footer a{
+    color: inherit;
+    border: 1px solid #888;
+}
+.nav-footer a:hover{
+    color: inherit;
+}
 /* Sidebar End */
