@@ -1335,6 +1335,11 @@ fieldset {
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
 }
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
 
 .card-block {
     flex: 1 1 auto;
@@ -1649,9 +1654,12 @@ fieldset[disabled] .btn {
 }
 .main {
     margin-top: 3.5rem;
+    margin-left: 220px;
+    padding: 3.5rem 0.5rem;
     position: relative;
     height: 100%;
     height: calc(100% - 3.5rem);
+    
 }
 
 /* App End */
@@ -1685,7 +1693,6 @@ header {
     top: 0;
     height: 3.5rem;
     width: 100%;
-    border-bottom: 1.5px solid #ddd;
     background-color: #fafafa;
     display: flex;
     align-items: center;
@@ -1699,6 +1706,12 @@ header .logo {
     text-align: center;
 }
 
+.logo-text{
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+
 .topbar {
     position: relative;
     height: 100%;
@@ -1708,8 +1721,10 @@ header .logo {
     flex-wrap: nowrap;
     font-size: 1.3rem;
     font-weight: 500px;
-    color: #333;
+    color: #fdfdfd;
+    background-color: rgba(51, 204, 204, 1);
     line-height:inherit;
+    border-bottom: 1.5px solid #ddd;
 }
 
 .right,
@@ -1729,6 +1744,9 @@ header .logo {
     line-height: 3.0rem;
     height: 100%;
     min-width: 50px;
+    color: inherit;
+    font-size: 1.3rem;
+    font-weight: 500;
 }
 .topbar-btn{
     height: 100%;
@@ -1754,7 +1772,6 @@ aside {
     left: 0;
     margin: 0;
     width: 220px;
-    border-right: 2px solid #ddd;
     background-color: #45586E;
     color: #adbece;
     height: 100%;
@@ -1862,3 +1879,9 @@ nav {
     color: inherit;
 }
 /* Sidebar End */
+
+/*start table */
+table{
+    width: 100%;
+}
+/* end table */
