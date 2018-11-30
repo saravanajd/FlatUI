@@ -1,5 +1,5 @@
-:root{
-    --color-info:rgba(51, 204, 204, 1);
+:root {
+    --color-info: rgba(51, 204, 204, 1);
 }
 
 @-ms-viewport {
@@ -1837,13 +1837,14 @@ nav {
     transition: all 0.3s ease;
 }
 
-.nav>li>a>i{
-    background-image: linear-gradient(to left, transparent, transparent 50%,var(--color-info) 50%, var(--color-info));
+.nav>li>a>i {
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--color-info) 50%, var(--color-info));
     background-position: 100% 0;
     background-size: 200% 100%;
 }
+
 .nav>li:hover>a>i {
-   background-position: 0 0;
+    background-position: 0 0;
 }
 
 .nav li>a>i {
@@ -1852,7 +1853,7 @@ nav {
     width: 44px;
     vertical-align: middle;
     margin-right: 10px;
-    font-size: 14px;    
+    font-size: 14px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1868,7 +1869,7 @@ nav {
     vertical-align: middle;
 }
 
-.active > a > i{
+.active>a>i {
     background: var(--color-info);
 }
 
