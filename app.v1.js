@@ -4,20 +4,21 @@ $(document).ready(function () {
     $(document).on("click", "header .navbar-collopse", function () {
         $('.nav > li > a > span').toggleClass('hide');
         $('body').toggleClass('minbar')
+        $('ul.nav > li').removeClass('open');
         if ($('body').hasClass('minbar')) {
             $('.main aside').animate({
                 width: 60
-            }, 500)
+            }, 400)
             $('.main').animate({
                 "margin-left": 60
-            }, 500)
+            }, 400)
         } else {
             $('.main aside').animate({
                 width: 220
-            }, 500)
+            }, 400)
             $('.main').animate({
                 "margin-left": 220
-            }, 500)
+            }, 400)
         }
         // $('.main aside').toggleClass('w-50');
 

@@ -33,6 +33,8 @@ body {
     color: #292b2c;
     background-color: #fafafa;
     box-sizing: border-box;
+    min-height: calc(100% - 3.5rem);
+    height: calc(100% - 3.5rem);
 }
 
 ul {
@@ -1660,11 +1662,14 @@ fieldset[disabled] .btn {
 
 .main {
     margin-top: 3.5rem;
-    margin-left: 220px;
-    padding: 3.5rem 0.5rem;
+    padding: 0;
     position: relative;
     height: 100%;
-    height: calc(100% - 3.5rem);
+    display: flex;
+    /* TODO Remove
+    margin-left: 220px;
+    padding: 3.5rem 0.5rem;
+     height: calc(100% - 3.5rem); */
 }
 
 /* App End */
@@ -1785,15 +1790,19 @@ header .logo {
 
 /* Sidebar Start */
 aside {
-    position: fixed;
-    top: 3.5rem;
-    left: 0;
-    margin: 0;
+    position: relative;
+    padding: 0;
     width: 220px;
     background-color: #45586E;
     color: #adbece;
     height: 100%;
+    flex: 0 0 220px;
+    /* TODO Remove
+    top: 3.5rem;
+    left: 0;
+    margin: 0;
     overflow: auto;
+     */ 
 }
 body.minbar aside > nav{
     overflow: hidden;
@@ -1801,9 +1810,9 @@ body.minbar aside > nav{
 nav {
     display: block;
     height: 100%;
-    /* Topbar height(3.5rem) + nav-footer height (3.5rem) = 7rem  */
-    max-height: calc(100% - 7rem);
-    overflow-y: auto;
+    /* nav-footer height (3.5rem) = 7rem  */
+    max-height: calc(100% - 3.5rem);
+    /* overflow-y: auto; */
 }
 
 .nav {
@@ -1919,8 +1928,7 @@ nav {
     padding: 0.5rem 0;
     position: absolute;
     left: 0;
-    /* Top-bar Height 3.5rem */
-    bottom: 3.5rem;
+    bottom: 0;
     width: 100%;
 }
 
@@ -1934,6 +1942,14 @@ nav {
 }
 
 /* Sidebar End */
+
+/* Page Start */
+.page-container{
+    width: 100%;
+    padding: 15px;
+    position: relative;
+}
+/* Page End */
 
 /*start table */
 table {
