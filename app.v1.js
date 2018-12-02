@@ -6,19 +6,34 @@ $(document).ready(function () {
         $('body').toggleClass('minbar')
         $('ul.nav > li').removeClass('open');
         if ($('body').hasClass('minbar')) {
-            $('.main aside').animate({
+            $('aside nav').animate({
                 width: 60
-            }, 400)
-            $('.main').animate({
-                "margin-left": 60
-            }, 400)
+            }, {
+                duration: 400,
+                queue: false
+            })
+            $('.logo-text').animate({
+                width: 60
+            }, {
+                duration: 400,
+                queue: false
+            })
         } else {
-            $('.main aside').animate({
+            $('.logo-text').animate({
                 width: 220
-            }, 400)
-            $('.main').animate({
-                "margin-left": 220
-            }, 400)
+            }, {
+                duration: 400,
+                queue: false
+            })
+            $('aside nav').animate({
+                width: 220
+            }, {
+                duration: 400,
+                queue: false
+            })
+            // $('.main').animate({
+            //     "margin-left": 220
+            // }, 400)
         }
         // $('.main aside').toggleClass('w-50');
 
@@ -42,7 +57,7 @@ $(document).ready(function () {
             if (!$li.hasClass('open')) {
                 $li.find('ul').animate({
                     opacity: 1,
-                   // height: $li.find('ul').get(0).scrollHeight,
+                    // height: $li.find('ul').get(0).scrollHeight,
                     "margin-left": "0"
                 }, 50);
             } else {
@@ -53,5 +68,19 @@ $(document).ready(function () {
             }
             $li.toggleClass('open');
         }
+    });
+
+    // Toggle Topbar active
+    $(document).on('click','.topbar-btn',function(){
+        $(this).toggleClass('active');
+        // if($(this).hasClass('active')){
+        //     $(this).find('.dropdown').animate({
+        //         'opacity':'1'
+        //     })
+        // }else{
+        //     $(this).find('.dropdown').animate({
+        //         'opacity':'0'
+        //     })
+        // }
     });
 })

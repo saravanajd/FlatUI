@@ -35,6 +35,7 @@ body {
     box-sizing: border-box;
     min-height: calc(100% - 3.5rem);
     height: calc(100% - 3.5rem);
+    overflow-x: hidden;
 }
 
 ul {
@@ -1679,9 +1680,10 @@ fieldset[disabled] .btn {
     display: none !important;
 }
 
-.w-50{
+.w-50 {
     width: 50px !important;
 }
+
 /* Helper Class End */
 /* ScrollBar Start */
 ::-webkit-scrollbar-track {
@@ -1706,7 +1708,7 @@ fieldset[disabled] .btn {
 /* Topbar Start */
 
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     height: 3.5rem;
     width: 100%;
@@ -1718,7 +1720,6 @@ header {
 }
 
 header .logo {
-    width: 220px;
     height: 100%;
     text-align: center;
 }
@@ -1727,17 +1728,32 @@ header .logo {
     font-weight: 500;
     font-size: 2.5rem;
     line-height: 3rem;
+    display: block;
+    width: 220px;
+}
+
+.logo-text.minbar {
+    display: none !important;
+}
+
+.minbar .logo-text.minbar {
+    display: block !important;
+}
+
+.minbar .logo-text {
+    display: none !important;
+    width: 60px;
 }
 
 .topbar {
     position: relative;
+    cursor: pointer;
     height: 100%;
     width: 100%;
-    width: calc(100% - 220px);
     display: flex;
     flex-wrap: nowrap;
-    font-size: 1.3rem;
-    font-weight: 500px;
+    font-size: 1.2rem;
+    font-weight: inherit;
     color: #fdfdfd;
     background-color: rgba(51, 204, 204, 1);
     line-height: inherit;
@@ -1749,67 +1765,128 @@ header .logo {
     flex: 0 0 50%;
     max-width: 50%;
     height: 100%;
+    display: flex;
 }
 
 .right {
     text-align: right;
+    justify-content: flex-end;
 }
 
-.right span,
-.right a,
+/* .right span, */
+.topbar-btn,
 .left span,
 .left a {
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
     line-height: 3.0rem;
     height: 100%;
     min-width: 50px;
     color: inherit;
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 450;
+    transition: all 0.3s ease;
 }
 
 .topbar-btn {
+    position: relative;
     height: 100%;
     text-align: center;
     color: inherit;
     font-size: inherit;
     padding: 0 1rem;
-
+    background-color: #19bfbf;
 }
 
+.topbar-btn:hover,
+.navbar-collopse:hover {
+    background-color: #17b5b5;
+}
+
+.topbar-btn .dropdown {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    width: 100%;
+    /* top: calc(100% + 10px); */
+    top: 100%;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+
+.topbar-btn .dropdown::before {
+    content: " ";
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    display: block;
+    margin: 0 auto;
+    transform: translate(10px,-50%);
+}
+.topbar-btn.active .dropdown{
+    display: block;
+    animation: fade 0.3s;
+}
+.topbar-btn .dropdown li {
+    padding: 0 1rem;
+    line-height: 2;
+}
+.topbar-btn .dropdown li:hover {
+background-color: #eee;
+}
+
+.topbar-btn .dropdown li a i{
+    margin-right: 10px;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
 .navbar-collopse {
     width: 50px;
     text-align: center;
-    color: inherit;
     cursor: pointer;
-    font-size: inherit;
+    background: #19bfbf;
 }
 
+.topbar-title {
+    margin-left: 1rem;
+}
+.displayname{
+    font-weight: normal;
+}
+.displayname i{
+    margin-left: 1rem;
+}
 /* Topbar End */
 
 /* Sidebar Start */
 aside {
     position: relative;
     padding: 0;
-    width: 220px;
     background-color: #45586E;
     color: #adbece;
     height: 100%;
-    flex: 0 0 220px;
     /* TODO Remove
+    width: 220px;
+    flex: 0 0 220px;
     top: 3.5rem;
     left: 0;
     margin: 0;
     overflow: auto;
-     */ 
+     */
 }
-body.minbar aside > nav{
-    overflow: hidden;
-}
+
 nav {
     display: block;
     height: 100%;
+    width: 220px;
     /* nav-footer height (3.5rem) = 7rem  */
     max-height: calc(100% - 3.5rem);
     /* overflow-y: auto; */
@@ -1912,6 +1989,21 @@ nav {
     height: auto; */
 }
 
+.minbar aside .dropdown ul {
+    display: none !important;
+}
+
+.minbar aside .dropdown:hover ul {
+    margin: 0 !important;
+    opacity: 1 !important;
+    height: auto !important;
+    display: block !important;
+    position: absolute;
+    width: 220px;
+    left: 100%;
+    top: 0px;
+    z-index: 1000;
+}
 
 .dropdown.active.open ul>li {
     margin-left: 0;
@@ -1944,12 +2036,24 @@ nav {
 /* Sidebar End */
 
 /* Page Start */
-.page-container{
+.page-container {
     width: 100%;
     padding: 15px;
     position: relative;
 }
+
 /* Page End */
+
+/* Keyframes start */
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* Keyframes end */
 
 /*start table */
 table {

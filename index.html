@@ -11,10 +11,12 @@
     <script src="dist/js/jquery.min.js"></script>
     <script src="app.v1.js"></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
             <span class="logo-text">Jade Tech</span>
+            <span class="logo-text minbar">JD</span>
         </div>
         <div class="topbar">
             <div class="left">
@@ -25,9 +27,25 @@
                 <a class="topbar-btn">
                     <i class="fa fa-bell"></i>
                 </a>
-                <a class="topbar-btn">
-                    <span class="displayname">John Doe</span>
-                </a>
+                <div class="topbar-btn">
+                    <span class="displayname">John Doe
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-cog"></i>
+                                Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-sign-out"></i>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
