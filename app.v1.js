@@ -12,14 +12,14 @@ $(document).ready(function () {
                 duration: 400,
                 queue: false
             })
-            $('.logo-text').animate({
+            $('.logo .img').animate({
                 width: 60
             }, {
                 duration: 400,
                 queue: false
             })
         } else {
-            $('.logo-text').animate({
+            $('.logo .img').animate({
                 width: 220
             }, {
                 duration: 400,
@@ -31,12 +31,7 @@ $(document).ready(function () {
                 duration: 400,
                 queue: false
             })
-            // $('.main').animate({
-            //     "margin-left": 220
-            // }, 400)
         }
-        // $('.main aside').toggleClass('w-50');
-
     });
 
     // Sidenav toggle active and open
@@ -71,16 +66,16 @@ $(document).ready(function () {
     });
 
     // Toggle Topbar active
-    $(document).on('click','.topbar-btn',function(){
+    $(document).on('click', '.topbar-btn', function () {
         $(this).toggleClass('active');
-        // if($(this).hasClass('active')){
-        //     $(this).find('.dropdown').animate({
-        //         'opacity':'1'
-        //     })
-        // }else{
-        //     $(this).find('.dropdown').animate({
-        //         'opacity':'0'
-        //     })
-        // }
     });
+
+    $(document).mouseup(function (e) {
+        var container = $('.topbar-btn .dropdown');
+        var topbar = container.closest('.topbar-btn')
+        if (!topbar.is(e.target) && topbar.has(e.target).length === 0 &&
+            !container.is(e.target) && container.has(e.target).length === 0) {
+                topbar.removeClass('active');
+        }
+    })
 })

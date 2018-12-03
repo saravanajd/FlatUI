@@ -15,8 +15,10 @@
 <body>
     <header>
         <div class="logo">
-            <span class="logo-text">Jade Tech</span>
-            <span class="logo-text minbar">JD</span>
+            <div class="img">
+                <span class="logo-text">Jade Tech</span>
+                <span class="logo-text minbar">JD</span>
+            </div>
         </div>
         <div class="topbar">
             <div class="left">
@@ -24,23 +26,31 @@
                 <span class="topbar-title">Profile</span>
             </div>
             <div class="right">
-                <a class="topbar-btn">
+                <span class="">
                     <i class="fa fa-bell"></i>
-                </a>
+                </span>
                 <div class="topbar-btn">
                     <span class="displayname">John Doe
                         <i class="fa fa-angle-down"></i>
                     </span>
                     <ul class="dropdown">
+                        <li class="dropdown-username">
+                            <a href="#">
+                                John Doe
+                            </a>
+                        </li>
                         <li>
                             <a href="#">
-                                <i class="fa fa-cog"></i>
                                 Profile
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fa fa-sign-out"></i>
+                                Settings
+                            </a>
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="#">
                                 Logout
                             </a>
                         </li>
@@ -140,6 +150,15 @@
         <div class="page-container">
             <div class="card">
                 <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control input-sm" placeholder="search">
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a href="#" class="btn btn-default">Add new <i class="fa fa-plus"></i> </a>
+                        </div>
+                    </div>
+
                     <table>
                         <thead>
                             <tr>
