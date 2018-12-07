@@ -1139,6 +1139,7 @@ fieldset {
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
+    margin-top: 1rem;
 }
 
 .card-body {
@@ -2013,6 +2014,7 @@ nav {
     width: 100%;
     padding: 15px;
     position: relative;
+    overflow: auto;
 }
 
 /* Page End */
@@ -2185,3 +2187,13 @@ td {
 }
 
 /* Dashboard End */
+
+
+/* Mobile  Start*/
+@media only screen and (max-width: 700px) {
+    table{
+        display: block;
+        overflow-x: auto;
+    }
+  }
+/* Mobile  End*/
