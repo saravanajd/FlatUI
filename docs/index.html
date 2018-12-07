@@ -6,24 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FlatUI</title>
-    <link rel="stylesheet" href="assets/css/app.v1.css">
+    <link rel="stylesheet" href="app.v1.css">
     <link rel="stylesheet" href="dist/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon.png">
     <script src="dist/js/jquery.min.js"></script>
-    <script src="assets/js/app.v1.js"></script>
+    <script src="app.v1.js"></script>
+
+    <script src="dist/js/chartjs/Chart.min.js"></script>
+    <script src="dist/pages/dashboard.js"></script>
 </head>
 
 <body>
     <header>
         <div class="logo">
             <div class="img">
-                <span class="logo-text">Jade Tech</span>
-                <span class="logo-text minbar">JD</span>
+                <span class="logo-text">FlatUI</span>
+                <span class="logo-text minbar">F</span>
             </div>
         </div>
         <div class="topbar">
             <div class="left">
                 <a class="navbar-collopse"> <i class="fa fa-bars"></i> </a>
-                <span class="topbar-title">Profile</span>
+                <span class="topbar-title">Dashboard</span>
             </div>
             <div class="right">
                 <span class="">
@@ -63,8 +67,8 @@
         <aside>
             <nav>
                 <ul class="nav">
-                    <li>
-                        <a href="#">
+                    <li class="active">
+                        <a href="index.html">
                             <i class="fa fa-dashboard"></i>
                             <span class="span">Dashbaord</span>
                         </a>
@@ -75,8 +79,8 @@
                             <span class="span">Profile</span>
                         </a>
                     </li>
-                    <li class="active">
-                        <a href="#">
+                    <li>
+                        <a href="table.html">
                             <i class="fa fa-users"></i>
                             <span class="span">Users</span>
                         </a>
@@ -148,87 +152,96 @@
             </div>
         </aside>
         <div class="page-container">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control input-sm" placeholder="search">
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <a href="#" class="btn btn-default">Add new <i class="fa fa-plus"></i> </a>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card bg-primary">
+                        <div class="card-body widget p-0">
+                            <div class="widget-data">
+                                <span>
+                                    Users
+                                </span>
+                                <span class="content">
+                                    10
+                                </span>
+                            </div>
+                            <div class="widget-icon">
+                                <span>
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                    <div class="table-filter">
-                        <a href="#" class="btn btn-default">Filter data</a>
-                        <span>Last 365 days</span>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>S.No</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Message</th>
-                                <th>Status</th>
-                                <th>Updated Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Saravanan</td>
-                                <td>saravana@gmail.com</td>
-                                <td>Test Message</td>
-                                <td>
-                                    <i class="fa fa-ticket"></i>
-                                </td>
-                                <td>12/10/2018</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Saravanan</td>
-                                <td>saravana@gmail.com</td>
-                                <td>Test Message</td>
-                                <td>
-                                    <i class="fa fa-ticket"></i>
-                                </td>
-                                <td>12/10/2018</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Saravanan</td>
-                                <td>saravana@gmail.com</td>
-                                <td>Test Message</td>
-                                <td>
-                                    <i class="fa fa-ticket"></i>
-                                </td>
-                                <td>12/10/2018</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Saravanan</td>
-                                <td>saravana@gmail.com</td>
-                                <td>Test Message</td>
-                                <td>
-                                    <i class="fa fa-ticket"></i>
-                                </td>
-                                <td>12/10/2018</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="row table-footer">
-                        <div class="col-md-6">
-                            <span>Showing 1 to 5 of 20 entries</span>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-warning">
+                        <div class="card-body widget p-0">
+                            <div class="widget-data">
+                                <span>
+                                    Invoice
+                                </span>
+                                <span class="content">
+                                    106
+                                </span>
+                            </div>
+                            <div class="widget-icon">
+                                <span>
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <ul class="pagination">
-                                <li> <i class="fa fa-angle-left"></i> </li>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li> <i class="fa fa-angle-right"></i> </li>
-                            </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-purple">
+                        <div class="card-body widget p-0">
+                            <div class="widget-data">
+                                <span>
+                                    Today Invoice
+                                </span>
+                                <span class="content">
+                                    8
+                                </span>
+                            </div>
+                            <div class="widget-icon">
+                                <span>
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-danger">
+                        <div class="card-body widget p-0">
+                            <div class="widget-data">
+                                <span>
+                                    Receipt
+                                </span>
+                                <span class="content">
+                                    200
+                                </span>
+                            </div>
+                            <div class="widget-icon">
+                                <span>
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-8">
+                    <div class="card ">
+                        <div class="card-body">
+                            <canvas id="canvas" class="h-300"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-dark">
+                        <div class="card-body">
+                            <canvas id="pieChart" class="h-300"></canvas>
                         </div>
                     </div>
                 </div>

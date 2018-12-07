@@ -11,6 +11,9 @@
     <link rel="shortcut icon" href="favicon.png">
     <script src="dist/js/jquery.min.js"></script>
     <script src="app.v1.js"></script>
+
+    <script src="dist/js/chartjs/Chart.min.js"></script>
+    <script src="dist/pages/dashboard.js"></script>
 </head>
 
 <body>
@@ -64,8 +67,8 @@
         <aside>
             <nav>
                 <ul class="nav">
-                    <li>
-                        <a href="#">
+                    <li class="active">
+                        <a href="index.html">
                             <i class="fa fa-dashboard"></i>
                             <span class="span">Dashbaord</span>
                         </a>
@@ -76,8 +79,8 @@
                             <span class="span">Profile</span>
                         </a>
                     </li>
-                    <li class="active">
-                        <a href="#">
+                    <li>
+                        <a href="table.html">
                             <i class="fa fa-users"></i>
                             <span class="span">Users</span>
                         </a>
@@ -151,9 +154,9 @@
         <div class="page-container">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="card">
+                    <div class="card bg-primary">
                         <div class="card-body widget p-0">
-                            <div class="widget-text">
+                            <div class="widget-data">
                                 <span>
                                     Users
                                 </span>
@@ -170,44 +173,79 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-
+                    <div class="card bg-warning">
+                        <div class="card-body widget p-0">
+                            <div class="widget-data">
+                                <span>
+                                    Invoice
+                                </span>
+                                <span class="content">
+                                    106
+                                </span>
+                            </div>
+                            <div class="widget-icon">
+                                <span>
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-
+                    <div class="card bg-purple">
+                        <div class="card-body widget p-0">
+                            <div class="widget-data">
+                                <span>
+                                    Today Invoice
+                                </span>
+                                <span class="content">
+                                    8
+                                </span>
+                            </div>
+                            <div class="widget-icon">
+                                <span>
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-
+                    <div class="card bg-danger">
+                        <div class="card-body widget p-0">
+                            <div class="widget-data">
+                                <span>
+                                    Receipt
+                                </span>
+                                <span class="content">
+                                    200
+                                </span>
+                            </div>
+                            <div class="widget-icon">
+                                <span>
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-md-8">
-                    <div class="card">
+                    <div class="card ">
                         <div class="card-body">
-
+                            <canvas id="canvas" class="h-300"></canvas>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card bg-dark">
                         <div class="card-body">
-
+                            <canvas id="pieChart" class="h-300"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
