@@ -8,18 +8,6 @@ $(document).ready(function () {
             $('body').removeClass('mobile-view')
         } else {
             $('.nav > li > a > span').removeClass('hide');
-            // $('.logo .img').animate({
-            //     width: 220
-            // }, {
-            //     duration: 400,
-            //     queue: false
-            // })
-            // $('aside nav').animate({
-            //     width: 220
-            // }, {
-            //     duration: 400,
-            //     queue: false
-            // })
             $('body').removeClass('minbar')
             $('body').toggleClass('mobile-view')
         }

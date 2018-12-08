@@ -3,7 +3,14 @@ $(document).ready(function () {
     // Toggle sidenav
     $(document).on("click", "header .navbar-collopse", function () {
         $('.nav > li > a > span').toggleClass('hide');
-        $('body').toggleClass('minbar')
+        if ($(document).width() > 700) {
+            $('body').toggleClass('minbar')
+            $('body').removeClass('mobile-view')
+        } else {
+            $('.nav > li > a > span').removeClass('hide');
+            $('body').removeClass('minbar')
+            $('body').toggleClass('mobile-view')
+        }
         $('ul.nav > li').removeClass('open');
         if ($('body').hasClass('minbar')) {
             $('aside nav').animate({
@@ -75,7 +82,7 @@ $(document).ready(function () {
         var topbar = container.closest('.topbar-btn')
         if (!topbar.is(e.target) && topbar.has(e.target).length === 0 &&
             !container.is(e.target) && container.has(e.target).length === 0) {
-                topbar.removeClass('active');
+            topbar.removeClass('active');
         }
     })
 })
